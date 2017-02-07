@@ -3,9 +3,13 @@ import pandas as pd
 import numpy as np
 import os
 
+BANDIT_USERNAME = os.environ.get("BANDIT_USERNAME")
+BANDIT_API_KEY = os.environ.get("BANDIT_API_KEY")
+BANDIT_URL = os.environ.get("BANDIT_URL")
+
 from bandit import Bandit
 
-bandit = Bandit('colin', 'c4548110-cc4b-11e6-a5c5-0242ac110003','http://54.201.192.120/')
+bandit = Bandit(BANDIT_USERNAME, BANDIT_API_KEY,BANDIT_URL)
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 df = pd.read_csv(os.path.join(dir_path, "LoanStats3a.csv"), skiprows=1)
