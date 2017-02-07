@@ -88,5 +88,5 @@ test = {
 
 LoanModel().execute(test)
 
-yh = Yhat("austin", os.environ.get("SCIENCEOPS_API_KEY", "https://sandbox.c.yhat.com/")
+yh = Yhat("austin", os.environ.get("SCIENCEOPS_API_KEY"), "https://sandbox.c.yhat.com/")
 yh.deploy("LendingClub", LoanModel, globals(), True)
